@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste Javascript</title>
+    <link rel="stylesheet" href="css-padrao/css-padrao.css">
+</head>
+<body>
+    <div class="" id="imagem">
+    <img class="user-image user-image-big rounded-circle border-card border-padrao bg-dark mr-4" widht="250px" height="250px" src="images/avatar.gif">
+    </div>
+    <div class="" id="update-foto">
+            <form action="../model/alterarImagem.php" method="POST" id="alterarFoto" enctype='multipart/form-data'>
+                <div class="form-row">
+                    <div class="col-12">
+                        <label class="lead form-check-label mb-2">Escolha a nova foto:</label>
+                    </div>
+                    <div class="col-12">
+                        <input type="file" class="form-control-file" id="altFoto" name="foto">
+                        <div class="invalid-feedback d-none" id="fotoErro">Nenhuma foto selecionada.</div>
+                        <div class="invalid-feedback d-none" id="fotoSalvar">Clique em Salvar Alterações para terminar.</div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-12 my-lg-4">
+                        <input type="submit" class="form-control bg-primary col-lg-3" value="Salvar alterações">
+                    </div>
+                </div>
+            </form>
+        </div>
+    <div class="col-lg-6 mx-auto mt-5">
+        <input class="form-control form-control-lg" type="text" name="nome" id="nome">
+        <div class="invalid-feedback d-none" id="erroNome">Campo Nome Vazio</div>
+    </div>
+    <div class="col-lg-6 mx-auto mt-5">
+        <input class="form-control form-control-lg" type="text" name="email" id="email">
+        <div class="invalid-feedback d-none" id="erroEmail">Campo Email Vazio</div>
+    </div>
+    <div class="col-lg-6 mx-auto mt-5">
+        <button class="btn form-control form-control-lg btn-lg btn-success" id="enviar" onclick="validar()">Enviar</button>
+    </div>
+
+    <div class="text-center mt-5" id="resultado">
+
+    </div>
+    
+
+    <script>
+        function validar(){
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            if (nome == ""){
+                document.getElementById("nome").className = "form-control form-control-lg is-invalid"
+                document.getElementById("erroNome").className = "invalid-feedback d-block"
+                return;
+            }
+            else{
+                document.getElementById("nome").className = "form-control form-control-lg"
+                document.getElementById("erroNome").className = "invalid-feedback d-none"
+            }
+            if (email == ""){
+                document.getElementById("email").className = "form-control form-control-lg is-invalid"
+                document.getElementById("erroEmail").className = "invalid-feedback d-block"
+                return;
+            }
+            else{
+                document.getElementById("email").className = "form-control form-control-lg"
+                document.getElementById("erroEmail").className = "invalid-feedback d-none"
+            }
+
+            document.getElementById("resultado").innerText = "AQUI VAI O RESULTADO";
+        }
+    </script>
+
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script src="./node_modules/popper.js/dist/umd/popper.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script type='text/javascript'>
+        $("#altFoto").on('change', function() {
+            if (typeof(FileReader) != "undefined") {
+
+                var imagem = $("#imagem");
+                imagem.empty();
+
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $("<img />", {
+                        "src": e.target.result,
+                        "class": "user-image mb-2 user-image-big rounded-circle border-card border-padrao bg-dark mr-4",
+                        "width" : "250px",
+                        "height": "250px",
+                    }).appendTo(imagem);
+                }
+                imagem.show();
+                reader.readAsDataURL($(this)[0].files[0]);
+            } 
+            else {
+                alert("Este navegador nao suporta FileReader.");
+            } 
+        });
+    </script>
+
+</body>
+</html>
