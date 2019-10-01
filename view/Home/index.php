@@ -21,6 +21,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../../css-padrao/css-padrao.css">
+    <style>
+        .ImagemGrande{
+            width: 100%;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-xl bg-primary navbar-light">

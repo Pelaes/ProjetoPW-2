@@ -12,9 +12,9 @@ function buscarProdutos(){
     $resultado = $sql->get_result();
     while ($linha = $resultado->fetch_assoc()) {
         echo "
-            <div class='col-lg-3 col-sm-6 mb-5'>
+            <div class='col-lg-3 col-md-4 col-sm-6 mb-5'>
                 <div class='card h-100'>
-                    <img class='card-img-top' src='../../imagens/".$linha['foto']."'>
+                    <img class='card-img-top ImagemGrande' src='../../imagens/".$linha['foto']."'>
                     <div class='card-body'>
                         <h4 class='card-title text-center mb-5'>".$linha['nome']."</h4>
                         <h6 class='card-subtitle text-justify'>".$linha['descricao']."</h6>
@@ -30,16 +30,6 @@ function buscarProdutos(){
                 </div>
             </div>
         ";
-        // echo $linha['idProduto'];
-        // echo "<br>";
-        // echo $linha['foto'];
-        // echo "<br>";
-        // echo $linha['nome'];
-        // echo "<br>";
-        // echo $linha['descricao'];
-        // echo "<br>";
-        // echo $linha['preco'];
-        // echo "<br>";
     }
 }
 
