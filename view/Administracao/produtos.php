@@ -66,14 +66,14 @@
                 <div class="form-row">
                     <div class="col-lg-9 my-3 mx-auto">
                         <div class="custom-control form-control-lg custom-checkbox">
-                            <input type="checkbox" class="custom-control-input mt-2" id="customCheck1" value="1" name="termo">
+                            <input type="checkbox" class="custom-control-input mt-2" id="customCheck1" name="ativo" checked>
                             <label class="ml-2 custom-control-label" for="customCheck1">Ativar produto?</label>
                         </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="col-lg-6 my-3 mx-auto">
-                        <input class="form-control btn-lg btn btn-success" type="submit" value="Cadastrar" name="cadastro" id="Cadastrar" disabled>
+                        <input class="form-control btn-lg btn btn-success" type="submit" value="Cadastrar" name="cadastro" id="Cadastrar">
                     </div>
                 </div>
             </form>
