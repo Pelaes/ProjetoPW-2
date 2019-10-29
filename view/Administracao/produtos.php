@@ -10,7 +10,7 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,7 @@
     <div class="row mt-5">
         <div class="col-lg-6 mx-auto">
             <h1 class="text-center">Cadastro de Produtos</h1>  
-            <form action="../../controller/CadastroProduto.php" method="POST" id="cadastro" enctype='multipart/form-data'>
+            <form action="../../controller/CadastroProduto.php" method="POST" id="cadProduto" enctype='multipart/form-data'>
                 <div id="imagem" class="imgCadastro mx-auto my-5">
                     <img class='card-img-top imgCadastro imgBorder' src='../../imagens/download.png'>
                 </div>
@@ -82,9 +82,26 @@
             <h1 class="text-center">Alterar Produtos</h1>   
         </div>
     </div>
+
+    <div class="modal fade" id="vazio" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="text-center">
+                        <h3 id="mensagem">
+                            
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="../../node_modules/jquery/dist/jquery.js"></script>
     <script src="../../node_modules/popper.js/dist/umd/popper.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="../../javascript/validacoes.js"></script>
 
     <script type='text/javascript'>
         $("#arquivo").on('change', function () {

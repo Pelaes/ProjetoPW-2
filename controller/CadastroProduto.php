@@ -20,25 +20,25 @@
 
     if (empty($nomeProduto))
     {
-        echo "Digite o nome do produto";     
+        echo "ErroNome";     
         exit();
     }
 
     if (empty($descricao))
     {
-        echo "Digite a descrição do produto";     
+        echo "ErroDesc";     
         exit();
     }
 
     if (empty($preco))
     {
-        echo "Digite o preço do produto";     
+        echo "ErroPreco";     
         exit();
     }
 
     if (empty($estoque))
     {
-        echo "Digite a quantidade em estoque do produto";     
+        echo "ErroEstoque";     
         exit();
     }
 
@@ -73,17 +73,17 @@
                 $imagem = $novoNome;
             }
             else{
-                echo "Não foi possível salvar a imagem";     
+                echo "ErroSalvar";     
                 exit();
             }
         }
         else{
-            echo "A imagem não está em um formato correto";     
+            echo "ErroFormato";     
             exit();
         }
     }
     else{
-        echo "Por favor, selecione uma imagem para o produto";     
+        echo "ErroImgVazio";     
         exit();
     }
 
