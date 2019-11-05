@@ -9,9 +9,9 @@
 
     function ValidarBusca()
     {
-        //include "../model/produtoModel.php";
-        //buscarProdutos();
-        echo "teste";
+        include "model/produtoModel.php";
+        buscarProdutos();
+        //echo "teste";
     }
 
 ?>
