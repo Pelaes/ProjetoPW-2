@@ -89,8 +89,8 @@
     <div class="container my-5">
         <div class="row mb-5">
             <?php
-                include "../../model/produtoModel.php";
-                buscarProdutos();
+                include "../../controller/ListarProduto.php";
+                ValidarBusca();
             ?>
         </div>
     </div>
