@@ -114,3 +114,39 @@ $(function(){
         return false;
     });//function de dentro
 });//function de fora
+
+$(function(){
+    $('#buscarProdutos').submit(function(){
+        var obj = this;
+        var form = $(obj);
+        var dados = new FormData(obj);
+        $.ajax({
+            url: form.attr('action'),
+            type: form.attr('method'),
+            data: dados,
+            processData: false,
+            cache: false,
+            contentType: false,
+            success: function(data){
+                if(data == "ErroProduto"){
+                    $('#mensagem').text("Digite o nome do produto que deseja buscar!");
+                    $('#vazio').modal('show');
+                    return;
+                }
+                if(data == "ErroNaoExiste"){
+                    $('#mensagem').text("Nenhum produto encontrado!");
+                    $('#vazio').modal('show');
+                    return;
+                }
+                if(data != "ErroProduto" && data != "ErroNaoExiste"){
+                    $('#respostaBusca').html(data);
+                }
+
+                
+            },//success
+        });//ajax
+        return false;
+    });//function de dentro
+});//function de fora
+
+

@@ -33,7 +33,7 @@
         include "../cabecalhos/navADM.php";
     ?>
    
-    <div class="row mt-5">
+    <div class="row container-fluid mt-5">
         <div class="col-lg-6 mx-auto">
             <h1 class="text-center">Cadastro de Produtos</h1>  
             <form action="../../controller/CadastroProduto.php" method="POST" id="cadProduto" enctype='multipart/form-data'>
@@ -80,6 +80,25 @@
         </div>
         <div class="col-lg-6 mx-auto">
             <h1 class="text-center">Alterar Produtos</h1>   
+            <form action="../../controller/BuscarProduto.php" method="POST" id="buscarProdutos">
+                <div class="form-row">
+                    <div class="form-group col-lg-7">
+                        <div class="my-4 ml-auto" id="buscaProduto">
+                            <input class="form-control form-control-lg" type="text" placeholder="Digite o nome do produto"
+                                name="buscaProduto">
+                        </div>
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <div class="my-4 mr-auto">
+                        <input class=" text-center form-control form-control-lg btn-lg btn btn-success" type="submit" value="Buscar Produto"
+                            name="nomeProduto">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="row" id="respostaBusca">
+
+            </div>
         </div>
     </div>
 
